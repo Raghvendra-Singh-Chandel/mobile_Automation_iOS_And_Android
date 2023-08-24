@@ -27,7 +27,8 @@ config.capabilities = [{
     'appium:platformVersion': '16.4',
     'appium:automationName': 'XCUITest',
     'appium:app': path.join(process.cwd(),'App/iOS/MVCTodo.app')
-}]
+}],
+config.services= ['appium'],
 
 exports.config = config
 

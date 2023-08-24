@@ -1,11 +1,11 @@
-const path = require('path')
 const {config} = require("./wdio.shared.conf")
-
+require('dotenv').config()
 // ===========================
-// Runner Configuration
+// BrowserStack credentials
 // ===========================
 //
-config.port = 4723;
+config.user = process.env.BROWSERSTACK_USER,
+config.key = process.env.BROWSERSTACK_KEY,
 
 // ===========================
 // Spec
@@ -23,10 +23,17 @@ config.capabilities= [{
     // capabilities for local Appium web tests on an Android Emulator
     platformName: 'Android',
     // browserName: 'Chrome',
-    'appium:deviceName': 'nightwatch-android-11',
-    'appium:platformVersion': '11',
+    'appium:deviceName': 'Google Pixel 3',
+    'appium:platformVersion': '10.0',
     'appium:automationName': 'UiAutomator2',
-    'appium:app': path.join(process.cwd(),'App/Android/ApiDemos-debug.apk')
+    'appium:app': 'bs://076c741e487d354a216e410ef987e202ab780f40',
+    'appium:autoGrantPermission': true
 }],
-config.services= ['appium']
+
+config.services = [
+    ['browserstack', {
+        testObservability: true,
+    }
+ ]
+],
 exports.config = config
