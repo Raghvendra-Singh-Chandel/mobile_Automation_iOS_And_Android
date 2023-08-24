@@ -12,6 +12,7 @@ class pageElement {
     get listDailog() {
         return $("~List dialog");
     };
+    
     get headerTitle() {
         return $('android=resourceId("android:id/alertTitle")');
     };
