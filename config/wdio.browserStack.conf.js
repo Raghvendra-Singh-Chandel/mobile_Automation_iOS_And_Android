@@ -33,7 +33,8 @@ config.capabilities= [{
 config.services = [
     ['browserstack', {
         testObservability: true,
-    }
+    },
+    config.browserstackLocal= true
  ]
 ],
 exports.config = config
