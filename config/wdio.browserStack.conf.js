@@ -32,7 +32,11 @@ config.capabilities= [{
 
 config.services = [
     ['browserstack', {
+        args:{
+            browserstackLocal: true
+        },
         testObservability: true,
+        commnad: 'browserstack'
     }
  ]
 ],
