@@ -6,6 +6,8 @@ require('dotenv').config()
 //
 config.user = process.env.BROWSERSTACK_USER,
 config.key = process.env.BROWSERSTACK_KEY,
+// config.user = process.env.BROWSERSTACK_USER,
+// config.key = process.env.BROWSERSTACK_KEY,
 
 // ===========================
 // Spec
@@ -33,6 +35,11 @@ config.capabilities= [{
 config.services = [
     ['browserstack', {
         testObservability: true,
+    },
+    config.browserstackLocal= true,
+    config.auth = {
+        user: process.env.BROWSERSTACK_USER,
+        key: process.env.BROWSERSTACK_KEY,
     }
  ]
 ],
