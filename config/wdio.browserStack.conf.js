@@ -26,13 +26,17 @@ config.capabilities= [{
     'appium:deviceName': 'Google Pixel 3',
     'appium:platformVersion': '10.0',
     'appium:automationName': 'UiAutomator2',
-    'appium:app': 'bs://076c741e487d354a216e410ef987e202ab780f40',
+    'app': 'bs://076c741e487d354a216e410ef987e202ab780f40',
     'appium:autoGrantPermission': true
 }],
 
 config.services = [
     ['browserstack', {
+        args:{
+            browserstackLocal: true
+        },
         testObservability: true,
+        commnad: 'browserstack'
     }
  ]
 ],
